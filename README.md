@@ -782,26 +782,3 @@ className = "text-[0.7rem] min-w-5 rounded-xl";
 5. **File Upload**: Test dengan berbagai ukuran dan tipe file
 
 ---
-
-## 📝 License
-
-[Tentukan license di sini]
-
----
-
-## 👥 Contributors
-
-[Tambahkan nama contributors]
-
----
-
-## 📞 Contact & Support
-
-Untuk pertanyaan atau dukungan, silakan hubungi:
-
-- Email: [email@example.com]
-- GitHub Issues: [repository-url/issues]
-
----
-
-**Built with ❤️ using React + Vite + Tailwind CSS**
