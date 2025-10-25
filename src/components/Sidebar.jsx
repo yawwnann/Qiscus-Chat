@@ -1,6 +1,7 @@
 import {
   Bell,
   CirclePlus,
+  CircleUserRound,
   MessageCircleMore,
   Search,
   Sparkles,
@@ -8,25 +9,51 @@ import {
 import logo from "../assets/Logo_Teks.png";
 
 function Sidebar({ chats, selectedChatId, onChatSelect }) {
+  // Fungsi untuk menggelapkan warna
+  const darkenColor = (color, percent = 40) => {
+    const num = parseInt(color.replace("#", ""), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) - amt;
+    const G = ((num >> 8) & 0x00ff) - amt;
+    const B = (num & 0x0000ff) - amt;
+    return (
+      "#" +
+      (
+        0x1000000 +
+        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+        (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+        (B < 255 ? (B < 1 ? 0 : B) : 255)
+      )
+        .toString(16)
+        .slice(1)
+    );
+  };
+
   const renderAvatar = (chat) => {
     if (chat.avatarType === "image" && chat.avatarUrl) {
       return (
         <img
           src={chat.avatarUrl}
           alt={chat.name}
-          className="h-11 w-11 rounded-xl object-cover"
+          className="h-11 w-11 rounded-full object-cover"
         />
       );
     }
 
-    const initials = chat.initials || chat.name.slice(0, 2).toUpperCase();
+    const accentColor = chat.accent || "#0ea5e9";
+    const bgColor = darkenColor(accentColor, 40); // Lebih gelap untuk background
+
     return (
       <div
-        className="flex h-11 w-11 items-center justify-center rounded-xl text-sm font-semibold text-white"
-        style={{ backgroundColor: chat.accent || "#0ea5e9" }}
-        aria-hidden="true"
+        className="flex h-11 w-11 items-center justify-center rounded-full"
+        style={{ backgroundColor: bgColor }}
       >
-        {initials}
+        <CircleUserRound
+          size={32}
+          style={{ color: accentColor }}
+          strokeWidth={2}
+          aria-hidden="true"
+        />
       </div>
     );
   };
@@ -57,11 +84,17 @@ function Sidebar({ chats, selectedChatId, onChatSelect }) {
             <Bell size={18} />
           </button>
           <div
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-xs font-semibold text-white shadow-sm"
+            className="flex h-9 w-9 items-center justify-center rounded-full"
+            style={{ backgroundColor: darkenColor("#16a34a", 40) }}
             role="img"
             aria-label="Agen"
           >
-            AM
+            <CircleUserRound
+              size={26}
+              style={{ color: "#16a34a" }}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
           </div>
         </div>
       </div>

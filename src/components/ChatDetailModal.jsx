@@ -1,4 +1,12 @@
-import { X, Users, FileText, Image, Video, FileIcon } from "lucide-react";
+import {
+  X,
+  Users,
+  FileText,
+  Image,
+  Video,
+  FileIcon,
+  CircleUserRound,
+} from "lucide-react";
 import { useState } from "react";
 
 function ChatDetailModal({ isOpen, onClose, room, participants, comments }) {
@@ -7,8 +15,27 @@ function ChatDetailModal({ isOpen, onClose, room, participants, comments }) {
   if (!isOpen) return null;
 
   const showImage = Boolean(room.avatarUrl);
-  const initials = room.initials || room.name.slice(0, 2).toUpperCase();
   const accent = room.accent || "#16a34a";
+
+  // Fungsi untuk menggelapkan warna
+  const darkenColor = (color, percent = 40) => {
+    const num = parseInt(color.replace("#", ""), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) - amt;
+    const G = ((num >> 8) & 0x00ff) - amt;
+    const B = (num & 0x0000ff) - amt;
+    return (
+      "#" +
+      (
+        0x1000000 +
+        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+        (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+        (B < 255 ? (B < 1 ? 0 : B) : 255)
+      )
+        .toString(16)
+        .slice(1)
+    );
+  };
 
   // Filter media dari comments
   const mediaItems =
@@ -63,10 +90,15 @@ function ChatDetailModal({ isOpen, onClose, room, participants, comments }) {
             />
           ) : (
             <div
-              className="flex h-24 w-24 items-center justify-center rounded-full text-2xl font-semibold text-white"
-              style={{ backgroundColor: accent }}
+              className="flex h-24 w-24 items-center justify-center rounded-full"
+              style={{ backgroundColor: darkenColor(accent, 40) }}
             >
-              {initials}
+              <CircleUserRound
+                size={64}
+                style={{ color: accent }}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
             </div>
           )}
           <div className="text-center">
@@ -147,10 +179,17 @@ function ChatDetailModal({ isOpen, onClose, room, participants, comments }) {
                   className="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50"
                 >
                   <div
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white"
-                    style={{ backgroundColor: participant.accent }}
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: darkenColor(participant.accent, 40),
+                    }}
                   >
-                    {participant.initials}
+                    <CircleUserRound
+                      size={32}
+                      style={{ color: participant.accent }}
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-slate-900">

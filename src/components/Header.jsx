@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  CircleUserRound,
   MoreVertical,
   Phone,
   Search,
@@ -21,8 +22,27 @@ function Header({
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showImage = Boolean(room.avatarUrl);
-  const initials = room.initials || room.name.slice(0, 2).toUpperCase();
   const accent = room.accent || "#16a34a";
+
+  // Fungsi untuk menggelapkan warna
+  const darkenColor = (color, percent = 40) => {
+    const num = parseInt(color.replace("#", ""), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) - amt;
+    const G = ((num >> 8) & 0x00ff) - amt;
+    const B = (num & 0x0000ff) - amt;
+    return (
+      "#" +
+      (
+        0x1000000 +
+        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+        (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+        (B < 255 ? (B < 1 ? 0 : B) : 255)
+      )
+        .toString(16)
+        .slice(1)
+    );
+  };
 
   const headerClasses = isMobile
     ? "flex items-center justify-between gap-2 border-b border-slate-700 bg-slate-900 px-3 py-2 text-white"
@@ -32,8 +52,7 @@ function Header({
     ? "inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-300 transition hover:bg-slate-800"
     : "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-500 transition hover:bg-emerald-100 hover:text-emerald-600";
 
-  const avatarSize = isMobile ? "h-9 w-9" : "h-11 w-11";
-  const avatarTextSize = isMobile ? "text-xs" : "text-sm";
+  const avatarSize = isMobile ? 36 : 44;
 
   const subtitleClasses = isMobile
     ? "text-[0.65rem] text-slate-400"
@@ -64,15 +83,24 @@ function Header({
           <img
             src={room.avatarUrl}
             alt={room.name}
-            className={`${avatarSize} shrink-0 rounded-lg object-cover`}
+            className="shrink-0 rounded-full object-cover"
+            style={{ width: avatarSize, height: avatarSize }}
           />
         ) : (
           <div
-            className={`${avatarSize} flex shrink-0 items-center justify-center rounded-lg ${avatarTextSize} font-semibold text-white`}
-            style={{ backgroundColor: accent }}
-            aria-hidden="true"
+            className="flex shrink-0 items-center justify-center rounded-full"
+            style={{
+              width: avatarSize,
+              height: avatarSize,
+              backgroundColor: darkenColor(accent, 40),
+            }}
           >
-            {initials}
+            <CircleUserRound
+              size={isMobile ? 26 : 32}
+              style={{ color: accent }}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
           </div>
         )}
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { CircleUserRound, ExternalLink, FileText } from "lucide-react";
 import MediaModal from "./MediaModal";
 
 function Message({ comment, isSender, participants }) {
@@ -7,8 +7,26 @@ function Message({ comment, isSender, participants }) {
   const sender = participants.find((p) => p.id === comment.sender);
   const senderName = sender ? sender.name : comment.sender.split("@")[0];
   const senderAccent = sender?.accent || "#16a34a";
-  const senderInitials =
-    sender?.initials || senderName.slice(0, 2).toUpperCase();
+
+  // Fungsi untuk menggelapkan warna
+  const darkenColor = (color, percent = 40) => {
+    const num = parseInt(color.replace("#", ""), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) - amt;
+    const G = ((num >> 8) & 0x00ff) - amt;
+    const B = (num & 0x0000ff) - amt;
+    return (
+      "#" +
+      (
+        0x1000000 +
+        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+        (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+        (B < 255 ? (B < 1 ? 0 : B) : 255)
+      )
+        .toString(16)
+        .slice(1)
+    );
+  };
 
   const formatTime = (timestamp) => {
     if (!timestamp) return "";
@@ -120,11 +138,15 @@ function Message({ comment, isSender, participants }) {
     >
       {!isSender && (
         <div
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl text-xs font-semibold text-white"
-          style={{ backgroundColor: senderAccent }}
-          aria-hidden="true"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
+          style={{ backgroundColor: darkenColor(senderAccent, 40) }}
         >
-          {senderInitials}
+          <CircleUserRound
+            size={26}
+            style={{ color: senderAccent }}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
         </div>
       )}
       <div
