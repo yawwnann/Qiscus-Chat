@@ -1,8 +1,8 @@
-# 💬 Qiscus Chat Interface
+#  Qiscus Chat Interface
 
 Aplikasi chat interface modern yang dibangun dengan React dan Vite, mendukung berbagai jenis pesan termasuk teks, gambar, video, dan file PDF dengan desain responsif yang elegan.
 
-## 📑 Daftar Isi
+##  Daftar Isi
 
 - [Fitur Utama](#-fitur-utama)
 - [Tech Stack](#-tech-stack)
@@ -15,7 +15,7 @@ Aplikasi chat interface modern yang dibangun dengan React dan Vite, mendukung be
 
 ---
 
-## ✨ Fitur Utama
+##  Fitur Utama
 
 ### Messaging
 
@@ -42,7 +42,7 @@ Aplikasi chat interface modern yang dibangun dengan React dan Vite, mendukung be
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Core Framework
 
@@ -72,7 +72,7 @@ Aplikasi chat interface modern yang dibangun dengan React dan Vite, mendukung be
 
 ---
 
-## 📂 Struktur Folder
+##  Struktur Folder
 
 ```
 Frontend/
@@ -122,9 +122,9 @@ Frontend/
 
 ---
 
-## 📄 Detail File Per Bagian
+##  Detail File Per Bagian
 
-### 🎯 **1. Core Application** (`src/`)
+###  **1. Core Application** (`src/`)
 
 #### **App.jsx**
 
@@ -178,7 +178,7 @@ createRoot(document.getElementById("root")).render(
 
 ---
 
-### 🧩 **2. Components** (`src/components/`)
+###  **2. Components** (`src/components/`)
 
 #### **Sidebar.jsx**
 
@@ -354,7 +354,7 @@ handleSubmit(); // Kirim message dengan/tanpa file
 
 ---
 
-### 🎣 **3. Custom Hooks** (`src/hooks/`)
+###  **3. Custom Hooks** (`src/hooks/`)
 
 #### **useChatData.js**
 
@@ -408,7 +408,7 @@ handleSubmit(); // Kirim message dengan/tanpa file
 
 ---
 
-### 🔧 **4. Constants** (`src/constants/`)
+###  **4. Constants** (`src/constants/`)
 
 #### **index.js**
 
@@ -439,7 +439,7 @@ export const STATIC_CHATS = [
 
 ---
 
-### 🛠 **5. Utils** (`src/utils/`)
+###  **5. Utils** (`src/utils/`)
 
 #### **formatters.js**
 
@@ -468,7 +468,7 @@ export function generateParticipantInitials(name) {
 
 ---
 
-### 📊 **6. Data** (`src/data/`)
+###  **6. Data** (`src/data/`)
 
 #### **extended-chat-data.json**
 
@@ -515,7 +515,7 @@ export function generateParticipantInitials(name) {
 
 ---
 
-## 📦 Format Data JSON
+##  Format Data JSON
 
 ### Chat Room Structure
 
@@ -610,7 +610,7 @@ export function generateParticipantInitials(name) {
 
 ---
 
-## 🚀 Instalasi & Setup
+##  Instalasi & Setup
 
 ### Prerequisites
 
@@ -655,7 +655,7 @@ export function generateParticipantInitials(name) {
 
 ---
 
-## 💻 Penggunaan
+##  Penggunaan
 
 ### Development
 
@@ -689,7 +689,7 @@ npm run preview
 
 ---
 
-## ⚙️ Konfigurasi
+##  Konfigurasi
 
 ### Vite Config (`vite.config.js`)
 
@@ -722,7 +722,7 @@ Tailwind v4 menggunakan CSS imports, tidak perlu config file terpisah.
 
 ---
 
-## 🎨 Styling Convention
+## Styling Convention
 
 ### Tailwind Classes Pattern
 
@@ -750,7 +750,7 @@ className = "text-[0.7rem] min-w-5 rounded-xl";
 
 ---
 
-## 📱 Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -773,7 +773,7 @@ className = "text-[0.7rem] min-w-5 rounded-xl";
 
 ---
 
-## 🔍 Tips Development
+## Tips Development
 
 1. **Hot Reload**: Perubahan otomatis ter-reflect di browser
 2. **React DevTools**: Install extension untuk debugging
