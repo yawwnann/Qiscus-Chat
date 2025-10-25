@@ -27,7 +27,7 @@ const Preloader = () => {
         {/* Logo dengan animasi scale in dan pulse */}
         <div className="animate-pulse">
           <img
-            src="/src/assets/qiscus.webp"
+            src="../assets/qiscus.webp"
             alt="Qiscus Logo"
             className="h-auto w-64 object-contain animate-[scale-in_0.5s_ease-out]"
             style={{
