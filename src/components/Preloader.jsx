@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import qiscusLogo from "../assets/qiscus.webp";
 
 const Preloader = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -27,7 +28,7 @@ const Preloader = () => {
         {/* Logo dengan animasi scale in dan pulse */}
         <div className="animate-pulse">
           <img
-            src="../assets/qiscus.webp"
+            src={qiscusLogo}
             alt="Qiscus Logo"
             className="h-auto w-64 object-contain animate-[scale-in_0.5s_ease-out]"
             style={{
