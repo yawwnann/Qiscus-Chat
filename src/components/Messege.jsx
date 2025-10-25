@@ -33,7 +33,7 @@ function Message({ comment, isSender, participants }) {
             <img
               src={comment.attachment.url}
               alt={comment.attachment.filename}
-              className="max-w-xs cursor-pointer rounded-xl object-cover"
+              className="w-full max-w-xs cursor-pointer rounded-xl object-cover"
               onClick={() => setIsModalOpen(true)}
             />
             {comment.message && <p className="text-sm">{comment.message}</p>}
@@ -46,7 +46,7 @@ function Message({ comment, isSender, participants }) {
               controls
               preload="metadata"
               poster={comment.attachment.thumbnail}
-              className="max-h-72 max-w-xs rounded-xl object-cover"
+              className="w-full max-h-72 max-w-xs rounded-xl object-cover"
             >
               <source
                 src={comment.attachment.url}
@@ -62,7 +62,7 @@ function Message({ comment, isSender, participants }) {
           <div className="flex flex-col gap-2">
             <button
               type="button"
-              className="group relative flex w-64 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
+              className="group relative flex w-full max-w-[256px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
               onClick={() => window.open(comment.attachment.url, "_blank")}
             >
               {/* PDF Preview/Thumbnail */}

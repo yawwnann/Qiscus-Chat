@@ -1,9 +1,12 @@
+import { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import ChatPanel from "./components/ChatPanel";
+import Preloader from "./components/Preloader";
 import { useChatData } from "./hooks/useChatData";
 import { useResponsive } from "./hooks/useResponsive";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const { isMobile, mobileView, setMobileView } = useResponsive();
   const {
     chatItems,
@@ -20,6 +23,15 @@ function App() {
     handleSendMessage,
   } = useChatData();
 
+  // Simulasi loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500); // Loading selama 1.5 detik
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleChatSelect = (chatId) => {
     setSelectedChatId(chatId);
     if (isMobile) {
@@ -35,6 +47,11 @@ function App() {
 
   const showSidebar = !isMobile || mobileView === "sidebar";
   const showChatPanel = !isMobile || mobileView === "chat";
+
+  // Tampilkan preloader jika masih loading
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   return (
     <div

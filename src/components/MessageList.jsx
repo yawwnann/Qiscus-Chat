@@ -5,7 +5,7 @@ function MessageList({ comments, currentUser, participants, emptyState }) {
 
   return (
     <section
-      className="flex-1 overflow-y-auto bg-slate-50 p-6"
+      className="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 p-4 md:p-6"
       aria-live="polite"
     >
       {hasMessages ? (

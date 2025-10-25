@@ -31,6 +31,7 @@ function ChatPanel({
         showBackButton={isMobile && mobileView === "chat"}
         onBack={onBack}
         isMobile={isMobile}
+        comments={activeComments}
       />
       <MessageList
         comments={activeComments}

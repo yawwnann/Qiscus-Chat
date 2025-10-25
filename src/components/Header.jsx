@@ -6,6 +6,8 @@ import {
   UserRound,
   Video,
 } from "lucide-react";
+import { useState } from "react";
+import ChatDetailModal from "./ChatDetailModal";
 
 function Header({
   room,
@@ -15,7 +17,9 @@ function Header({
   showBackButton = false,
   onBack,
   isMobile = false,
+  comments = [],
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const showImage = Boolean(room.avatarUrl);
   const initials = room.initials || room.name.slice(0, 2).toUpperCase();
   const accent = room.accent || "#16a34a";
@@ -73,40 +77,72 @@ function Header({
         )}
 
         <div className="min-w-0 flex-1">
-          <h1
-            className={`truncate font-semibold leading-tight ${
-              isMobile ? "text-sm text-white" : "text-base text-slate-900"
-            }`}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="w-full text-left transition hover:opacity-75"
           >
-            {room.name}
-          </h1>
-          {room.subtitle && (
-            <span className={`block truncate ${subtitleClasses}`}>
-              {room.subtitle}
-            </span>
-          )}
-          {room.status && !isMobile && (
-            <span className={statusClasses}>{room.status}</span>
-          )}
+            <h1
+              className={`truncate font-semibold leading-tight ${
+                isMobile ? "text-sm text-white" : "text-base text-slate-900"
+              }`}
+            >
+              {room.name}
+            </h1>
+            {room.subtitle && (
+              <span className={`block truncate ${subtitleClasses}`}>
+                {room.subtitle}
+              </span>
+            )}
+            {room.status && !isMobile && (
+              <span className={statusClasses}>{room.status}</span>
+            )}
+          </button>
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-1">
+      <div className="flex shrink-0 items-center gap-1.5">
         {isMobile ? (
           <>
+            {participants.length > 0 && onChangeUser && (
+              <div className="relative mr-0.5">
+                <select
+                  className="h-9 w-9 cursor-pointer appearance-none rounded-lg text-center text-xs font-semibold text-white opacity-0 transition focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  value={currentUserId}
+                  onChange={(event) => onChangeUser(event.target.value)}
+                  aria-label="Ganti identitas pengirim"
+                  style={{
+                    backgroundImage: "none",
+                  }}
+                >
+                  {participants.map((participant) => (
+                    <option key={participant.id} value={participant.id}>
+                      {participant.name}
+                    </option>
+                  ))}
+                </select>
+                <div
+                  className="pointer-events-none absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-lg text-xs font-semibold text-white transition hover:opacity-90"
+                  style={{
+                    backgroundColor:
+                      participants.find((p) => p.id === currentUserId)
+                        ?.accent || "#16a34a",
+                  }}
+                  aria-hidden="true"
+                >
+                  {participants.find((p) => p.id === currentUserId)?.initials ||
+                    participants
+                      .find((p) => p.id === currentUserId)
+                      ?.name.slice(0, 2)
+                      .toUpperCase()}
+                </div>
+              </div>
+            )}
             <button
               className={actionButtonClasses}
               type="button"
               aria-label="Mulai panggilan video"
             >
               <Video size={18} />
-            </button>
-            <button
-              className={actionButtonClasses}
-              type="button"
-              aria-label="Cari dalam percakapan"
-            >
-              <Search size={18} />
             </button>
             <button
               className={actionButtonClasses}
@@ -169,6 +205,15 @@ function Header({
           </>
         )}
       </div>
+
+      {/* Chat Detail Modal */}
+      <ChatDetailModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        room={room}
+        participants={participants}
+        comments={comments}
+      />
     </header>
   );
 }
