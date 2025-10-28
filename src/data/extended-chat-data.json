@@ -4,7 +4,7 @@
       "room": {
         "name": "Product A",
         "id": 12456,
-        "image_url": "https://picsum.photos/id/237/200/300",
+        "image_url": null,
         "participant": [
           {
             "id": "admin@mail.com",
@@ -115,6 +115,498 @@
           "message": "Terima kasih banyak atas bantuannya!",
           "sender": "customer@mail.com",
           "timestamp": "2024-01-15T19:07:00Z"
+        }
+      ]
+    },
+    {
+      "room": {
+        "name": "Sari Wulandari",
+        "id": 12457,
+        "image_url": null,
+        "participant": [
+          {
+            "id": "sari.wulandari@mail.com",
+            "name": "Sari Wulandari",
+            "role": 2
+          },
+          {
+            "id": "agent@mail.com",
+            "name": "Agent A",
+            "role": 1
+          }
+        ]
+      },
+      "comments": [
+        {
+          "id": 885601,
+          "type": "text",
+          "message": "Halo, saya ingin bertanya tentang produk yang saya pesan kemarin",
+          "sender": "sari.wulandari@mail.com",
+          "timestamp": "2024-01-16T10:00:00Z"
+        },
+        {
+          "id": 885602,
+          "type": "text",
+          "message": "Selamat pagi, Sari. Dengan senang hati saya bantu. Bisa beritahu nomor ordernya?",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-16T10:01:00Z"
+        },
+        {
+          "id": 885603,
+          "type": "text",
+          "message": "Nomor ordernya #ORD-2024-001234",
+          "sender": "sari.wulandari@mail.com",
+          "timestamp": "2024-01-16T10:02:00Z"
+        },
+        {
+          "id": 885604,
+          "type": "text",
+          "message": "Baik, saya cek dulu ya. Mohon tunggu sebentar...",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-16T10:02:30Z"
+        },
+        {
+          "id": 885605,
+          "type": "text",
+          "message": "Pesanan Anda sudah dalam proses pengiriman. Estimated delivery: 2-3 hari kerja",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-16T10:03:30Z"
+        },
+        {
+          "id": 885606,
+          "type": "image",
+          "message": "Ini screenshot tracking number dari sistem kami",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-16T10:04:00Z",
+          "attachment": {
+            "url": "https://picsum.photos/id/180/800/600",
+            "filename": "tracking_screenshot.png",
+            "size": 189440,
+            "mimetype": "image/png",
+            "thumbnail": "https://picsum.photos/id/180/200/150"
+          }
+        },
+        {
+          "id": 885607,
+          "type": "text",
+          "message": "Wah terima kasih banyak informasinya! Sangat membantu 😊",
+          "sender": "sari.wulandari@mail.com",
+          "timestamp": "2024-01-16T10:05:00Z"
+        },
+        {
+          "id": 885608,
+          "type": "text",
+          "message": "Sama-sama! Jika ada pertanyaan lain, jangan ragu untuk menghubungi kami lagi ya",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-16T10:05:30Z"
+        }
+      ]
+    },
+    {
+      "room": {
+        "name": "Budi Santoso",
+        "id": 12458,
+        "image_url": null,
+        "participant": [
+          {
+            "id": "budi.santoso@mail.com",
+            "name": "Budi Santoso",
+            "role": 2
+          },
+          {
+            "id": "agent@mail.com",
+            "name": "Agent A",
+            "role": 1
+          }
+        ]
+      },
+      "comments": [
+        {
+          "id": 885701,
+          "type": "text",
+          "message": "Permisi, saya mengalami kendala saat login ke aplikasi",
+          "sender": "budi.santoso@mail.com",
+          "timestamp": "2024-01-17T14:00:00Z"
+        },
+        {
+          "id": 885702,
+          "type": "text",
+          "message": "Halo Pak Budi, mohon maaf atas ketidaknyamanannya. Bisa jelaskan kendala yang dialami?",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-17T14:01:00Z"
+        },
+        {
+          "id": 885703,
+          "type": "text",
+          "message": "Setiap kali saya masukkan password, muncul error 'Invalid credentials'",
+          "sender": "budi.santoso@mail.com",
+          "timestamp": "2024-01-17T14:02:00Z"
+        },
+        {
+          "id": 885704,
+          "type": "image",
+          "message": "Ini screenshot error messagenya",
+          "sender": "budi.santoso@mail.com",
+          "timestamp": "2024-01-17T14:03:00Z",
+          "attachment": {
+            "url": "https://picsum.photos/id/119/800/600",
+            "filename": "error_screenshot.jpg",
+            "size": 312320,
+            "mimetype": "image/jpeg",
+            "thumbnail": "https://picsum.photos/id/119/200/150"
+          }
+        },
+        {
+          "id": 885705,
+          "type": "text",
+          "message": "Terima kasih atas screenshotnya. Saya akan kirimkan link untuk reset password",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-17T14:04:00Z"
+        },
+        {
+          "id": 885706,
+          "type": "text",
+          "message": "Silakan klik link ini untuk reset password: https://app.example.com/reset-password",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-17T14:04:30Z"
+        },
+        {
+          "id": 885707,
+          "type": "pdf",
+          "message": "Dan ini panduan lengkap cara reset password",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-17T14:05:00Z",
+          "attachment": {
+            "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            "filename": "panduan_reset_password.pdf",
+            "size": 458752,
+            "mimetype": "application/pdf",
+            "pages": 3
+          }
+        },
+        {
+          "id": 885708,
+          "type": "text",
+          "message": "Sudah berhasil! Terima kasih banyak atas bantuannya",
+          "sender": "budi.santoso@mail.com",
+          "timestamp": "2024-01-17T14:10:00Z"
+        },
+        {
+          "id": 885709,
+          "type": "text",
+          "message": "Alhamdulillah, senang bisa membantu! 🙏",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-17T14:10:30Z"
+        }
+      ]
+    },
+    {
+      "room": {
+        "name": "Dewi Lestari",
+        "id": 12459,
+        "image_url": null,
+        "participant": [
+          {
+            "id": "dewi.lestari@mail.com",
+            "name": "Dewi Lestari",
+            "role": 2
+          },
+          {
+            "id": "agent@mail.com",
+            "name": "Agent A",
+            "role": 1
+          }
+        ]
+      },
+      "comments": [
+        {
+          "id": 885801,
+          "type": "text",
+          "message": "Hi! Saya tertarik dengan produk premium subscription",
+          "sender": "dewi.lestari@mail.com",
+          "timestamp": "2024-01-18T09:00:00Z"
+        },
+        {
+          "id": 885802,
+          "type": "text",
+          "message": "Halo Dewi! Senang mendengarnya. Ada yang ingin ditanyakan tentang paket premium?",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:01:00Z"
+        },
+        {
+          "id": 885803,
+          "type": "text",
+          "message": "Iya, apa saja benefit yang didapat dari paket premium?",
+          "sender": "dewi.lestari@mail.com",
+          "timestamp": "2024-01-18T09:02:00Z"
+        },
+        {
+          "id": 885804,
+          "type": "text",
+          "message": "Paket premium mencakup:\n- Unlimited storage\n- Priority support 24/7\n- Advanced analytics\n- Custom branding\n- API access",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:03:00Z"
+        },
+        {
+          "id": 885805,
+          "type": "video",
+          "message": "Ini video demo fitur-fitur premium",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:04:00Z",
+          "attachment": {
+            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "filename": "premium_features_demo.mp4",
+            "size": 8912896,
+            "mimetype": "video/mp4",
+            "duration": 95,
+            "thumbnail": "https://picsum.photos/id/201/480/270"
+          }
+        },
+        {
+          "id": 885806,
+          "type": "text",
+          "message": "Wow keren! Berapa harganya per bulan?",
+          "sender": "dewi.lestari@mail.com",
+          "timestamp": "2024-01-18T09:08:00Z"
+        },
+        {
+          "id": 885807,
+          "type": "text",
+          "message": "Harga normal Rp 299.000/bulan. Tapi sekarang ada promo spesial Rp 199.000/bulan untuk 3 bulan pertama!",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:09:00Z"
+        },
+        {
+          "id": 885808,
+          "type": "pdf",
+          "message": "Ini detail lengkap pricing dan comparison table",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:10:00Z",
+          "attachment": {
+            "url": "https://www.africau.edu/images/default/sample.pdf",
+            "filename": "pricing_comparison.pdf",
+            "size": 638976,
+            "mimetype": "application/pdf",
+            "pages": 4
+          }
+        },
+        {
+          "id": 885809,
+          "type": "text",
+          "message": "Menarik! Saya akan pertimbangkan dulu. Terima kasih infonya 😊",
+          "sender": "dewi.lestari@mail.com",
+          "timestamp": "2024-01-18T09:12:00Z"
+        },
+        {
+          "id": 885810,
+          "type": "text",
+          "message": "Siap! Jika sudah siap subscribe, langsung hubungi saya ya. Promonya berlaku sampai akhir bulan ini 🎉",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-18T09:13:00Z"
+        }
+      ]
+    },
+    {
+      "room": {
+        "name": "Andi Prasetyo",
+        "id": 12460,
+        "image_url": null,
+        "participant": [
+          {
+            "id": "andi.prasetyo@mail.com",
+            "name": "Andi Prasetyo",
+            "role": 2
+          },
+          {
+            "id": "agent@mail.com",
+            "name": "Agent A",
+            "role": 1
+          }
+        ]
+      },
+      "comments": [
+        {
+          "id": 885901,
+          "type": "text",
+          "message": "Selamat siang, saya ingin komplain tentang produk yang saya terima",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:00:00Z"
+        },
+        {
+          "id": 885902,
+          "type": "text",
+          "message": "Selamat siang Pak Andi. Mohon maaf atas ketidaknyamanannya. Bisa dijelaskan masalahnya?",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-19T13:01:00Z"
+        },
+        {
+          "id": 885903,
+          "type": "text",
+          "message": "Produk yang diterima tidak sesuai dengan gambar di website. Warnanya berbeda",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:02:00Z"
+        },
+        {
+          "id": 885904,
+          "type": "image",
+          "message": "Ini foto produk yang saya terima",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:03:00Z",
+          "attachment": {
+            "url": "https://picsum.photos/id/401/800/600",
+            "filename": "produk_diterima.jpg",
+            "size": 428032,
+            "mimetype": "image/jpeg",
+            "thumbnail": "https://picsum.photos/id/401/200/150"
+          }
+        },
+        {
+          "id": 885905,
+          "type": "image",
+          "message": "Dan ini screenshot gambar di website",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:04:00Z",
+          "attachment": {
+            "url": "https://picsum.photos/id/402/800/600",
+            "filename": "website_screenshot.jpg",
+            "size": 385024,
+            "mimetype": "image/jpeg",
+            "thumbnail": "https://picsum.photos/id/402/200/150"
+          }
+        },
+        {
+          "id": 885906,
+          "type": "text",
+          "message": "Saya sangat memahami kekecewaan Bapak. Kami akan proses return dan refund secepatnya",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-19T13:06:00Z"
+        },
+        {
+          "id": 885907,
+          "type": "text",
+          "message": "Atau jika Bapak mau, kami bisa kirimkan produk pengganti dengan warna yang sesuai tanpa biaya tambahan",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-19T13:07:00Z"
+        },
+        {
+          "id": 885908,
+          "type": "text",
+          "message": "Baiklah, saya pilih produk pengganti saja",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:08:00Z"
+        },
+        {
+          "id": 885909,
+          "type": "text",
+          "message": "Siap Pak! Kami akan proses pengiriman hari ini juga. Produk lama bisa dikembalikan saat kurir datang",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-19T13:09:00Z"
+        },
+        {
+          "id": 885910,
+          "type": "pdf",
+          "message": "Ini form return untuk ditandatangani nanti saat kurir tiba",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-19T13:10:00Z",
+          "attachment": {
+            "url": "https://www.clickdimensions.com/links/TestPDFfile.pdf",
+            "filename": "form_return.pdf",
+            "size": 725094,
+            "mimetype": "application/pdf",
+            "pages": 2
+          }
+        },
+        {
+          "id": 885911,
+          "type": "text",
+          "message": "Terima kasih atas respon cepatnya! 👍",
+          "sender": "andi.prasetyo@mail.com",
+          "timestamp": "2024-01-19T13:11:00Z"
+        }
+      ]
+    },
+    {
+      "room": {
+        "name": "Rina Permata",
+        "id": 12461,
+        "image_url": null,
+        "participant": [
+          {
+            "id": "rina.permata@mail.com",
+            "name": "Rina Permata",
+            "role": 2
+          },
+          {
+            "id": "agent@mail.com",
+            "name": "Agent A",
+            "role": 1
+          }
+        ]
+      },
+      "comments": [
+        {
+          "id": 886001,
+          "type": "text",
+          "message": "Halo! Saya butuh bantuan urgent",
+          "sender": "rina.permata@mail.com",
+          "timestamp": "2024-01-20T16:00:00Z"
+        },
+        {
+          "id": 886002,
+          "type": "text",
+          "message": "Halo Rina! Saya siap membantu. Ada apa ya?",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-20T16:00:30Z"
+        },
+        {
+          "id": 886003,
+          "type": "text",
+          "message": "Saya perlu download semua data saya dari platform, tapi tidak menemukan menu exportnya",
+          "sender": "rina.permata@mail.com",
+          "timestamp": "2024-01-20T16:01:00Z"
+        },
+        {
+          "id": 886004,
+          "type": "text",
+          "message": "Tenang, saya bantu caranya. Menu export ada di Settings > Data & Privacy > Export Data",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-20T16:02:00Z"
+        },
+        {
+          "id": 886005,
+          "type": "video",
+          "message": "Ini video tutorial cara export data",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-20T16:03:00Z",
+          "attachment": {
+            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            "filename": "export_data_tutorial.mp4",
+            "size": 6589440,
+            "mimetype": "video/mp4",
+            "duration": 78,
+            "thumbnail": "https://picsum.photos/id/501/480/270"
+          }
+        },
+        {
+          "id": 886006,
+          "type": "text",
+          "message": "Sempurna! Sudah ketemu. Proses exportnya berapa lama ya?",
+          "sender": "rina.permata@mail.com",
+          "timestamp": "2024-01-20T16:06:00Z"
+        },
+        {
+          "id": 886007,
+          "type": "text",
+          "message": "Biasanya 15-30 menit tergantung jumlah data. Nanti akan ada notifikasi email setelah selesai",
+          "sender": "agent@mail.com",
+          "timestamp": "2024-01-20T16:07:00Z"
+        },
+        {
+          "id": 886008,
+          "type": "text",
+          "message": "Oke siap, terima kasih banyak! 😊",
+          "sender": "rina.permata@mail.com",
+          "timestamp": "2024-01-20T16:08:00Z"
         }
       ]
     }
